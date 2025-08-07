@@ -10,6 +10,7 @@ import { MainMenuCart } from './MainMenuCart';
 import { lsService } from 'services/localeStorage';
 import { Link } from '@tanstack/react-router';
 import config from 'config';
+import { connectAureusWalletAndSendHbar } from 'libs/wagmi/connectAureusWallet';
 
 const TenderlyForkAlert = () => {
   const [isDebugMode, setIsDebugMode] = useState(false);
@@ -52,6 +53,9 @@ export const MainMenuRight: FC = () => {
       {aboveBreakpoint('md') && (
         <MainMenuRightBurger menuMapping={menuMapping} />
       )}
+      <button onClick={() => connectAureusWalletAndSendHbar('0.0.6509581')}>
+        Connect Aureus Wallet
+      </button>
       <MainMenuRightWallet />
     </div>
   );

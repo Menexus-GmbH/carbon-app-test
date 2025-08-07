@@ -6,6 +6,8 @@
     "@bancor/carbon-sdk": "^0.0.115-DEV",
     "@cloudflare/workers-types": "4.20230717.0",
     "@floating-ui/react": "0.25.4",
+    "@hashgraph/proto": "^2.21.0",
+    "@hashgraph/sdk": "^2.70.0",
     "@oddbird/popover-polyfill": "0.5.2",
     "@playwright/test": "1.52.0",
     "@sentry/react": "8.17.0",
@@ -30,6 +32,7 @@
     "@types/react-dom": "19.0.2",
     "@vitejs/plugin-react": "4.3.4",
     "@vitest/coverage-v8": "1.6.0",
+    "@walletconnect/sign-client": "^2.21.6",
     "autoprefixer": "10.4.12",
     "body-scroll-lock": "4.0.0-beta.0",
     "buffer": "6.0.3",
@@ -87,6 +90,7 @@
   "scripts": {
     "compile-abis": "typechain --target ethers-v5 --out-dir \"src/abis/types\" \"src/abis/**/*.json\"",
     "prepare": "yarn husky install",
+    "prestart": "yarn compile-abis",
     "start": "vite",
     "start:ethereum": "cross-env VITE_NETWORK=ethereum vite",
     "start:hedera": "cross-env VITE_NETWORK=hedera vite",
@@ -125,5 +129,8 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "devDependencies": {
+    "vite-plugin-node-polyfills": "^0.24.0"
+  }
 }
